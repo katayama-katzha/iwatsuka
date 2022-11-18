@@ -1,0 +1,391 @@
+@charset "UTF-8";
+
+// 色
+$c-main:#1a1a1a;
+$red:#e71a25;
+$red2:#d5c1b9;
+
+
+$sans:"Noto Sans JP";
+$roboto:"Roboto";
+$mincho:"fot-tsukuaoldmin-pr6n";
+
+// ブレークポイント
+$breakpoints: (
+	"sp-down": "(max-width: 767px)",
+	"sp-up": "(min-width: 768px)",
+	"tab-down": "(max-width: 1024px)",
+	"tab-up": "(min-width: 1025px)",
+	"wide" : "(min-width: 1800px)"
+
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$baseWidth : 1440;
+ 	@function vw($pixelsVw) {
+    @return $pixelsVw / $baseWidth * 100vw;
+}
+$baseWidth2 : 375;
+	@function vw2($pixelsVw) {
+	@return $pixelsVw / $baseWidth2 * 100vw;
+}
+
+/* リセットCSS
+===================================== */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, button, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  -webkit-font-smoothing: antialiased;
+  color: $c-main;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+li, dd {
+  list-style-type: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q {
+  &:before, &:after {
+    content: "";
+    content: none;
+  }
+}
+
+blockquote {
+  &:before, &:after {
+    content: "";
+    content: none;
+  }
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+/* 基本設定
+===================================== */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  color: $c-main;
+  font-weight: 500;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+
+.tab-show{
+	display: none;
+	@include mq('tab-down'){
+		display: block;
+	}
+}
+
+.tab-hide{
+	display: block;
+	@include mq('tab-down'){
+		display: none;
+	}
+}
+
+.sp-show{
+	display: none;
+	@include mq('sp-down'){
+		display: block;
+	}
+}
+
+.sp-hide{
+	display: block;
+	@include mq('sp-down'){
+		display: none;
+	}
+}
+
+.totop{
+	position: fixed;
+	width: 45px;
+	height: 45px;
+	background-image: linear-gradient(to left, #3a1c71 0%, #ffaf7b 100%);
+	border: none;
+	border-radius: 99px;
+	right: 70px;
+	z-index: 99;
+	bottom: 70px;
+	opacity: 0;
+	transition: all .2s;
+	@include mq('tab-down'){
+		right: 30px;
+		bottom: 50px;
+		width: 50px;
+		height: 50px;
+	}
+	&::after{
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: 15px;
+		background-color:white;
+		top: 20px;
+		left: 9.5px;
+		transform: rotate(-45deg);
+		@include mq('tab-down'){
+			width: 20px;
+			left: 8px;
+			top:22px;
+		}
+	}
+	&::before{
+		content: "";
+		position: absolute;
+		height: 2px;
+		width: 15px;
+		background-color: white;
+		top: 20px;
+		right: 9.5px;
+		transform: rotate(45deg);
+		@include mq('tab-down'){
+			width: 20px;
+			right: 8px;
+			top:22px;
+		}
+	}
+	&.bottomScroll{
+		opacity: 1;
+	}
+}
+
+#loading {
+	width: 100vw;
+	height: 100vh;
+	transition: all 1s;
+	background-color: #FAFFFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	img{
+		position: absolute;
+		max-width: 400px;
+		width: 80%;
+		
+		@include mq('tab-down'){
+			top: 30vh;
+		}
+	}
+}
+
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+.spinner {
+	width: 100px;
+	height: 100px;
+	margin: 200px auto;
+	background-image: linear-gradient(to left, #3a1c71 0%, #ffaf7b 100%);
+	border-radius: 100%;
+	animation: sk-scaleout 1.0s infinite ease-in-out;
+
+	@include mq('tab-down'){
+		position: relative;
+		top: -10vh;
+	}
+}
+
+.loaded {
+	opacity: 0;
+	visibility: hidden;
+}
+
+main{
+	overflow: hidden;
+}
+
+
+.red{
+	color: $red;
+}
+.bg-red{
+	background-color: $red;
+}
+.white{
+	color: #fff;
+}
+.bg-white{
+	background-color: #fff;
+}
+
+.mincho{
+	font-family: $mincho;
+}
+
+.roboto{
+	font-family: $roboto;
+}
+
+h2{
+	font-size: 32px;
+	letter-spacing: 0.1em;
+	font-weight: 500;
+}
+
+h3{
+	font-size: 26px;
+	letter-spacing: 0.1em;
+	font-weight: 500;
+}
+
+.sub{
+	font-size: 14px;
+	letter-spacing: 0.05em;
+}
+
+p{
+	font-size: 16px;
+}
+
+time{
+	font-size: 18px;
+}
+
+.button{
+	font-size: 15px;
+}
+
+header{
+	position: fixed;
+	height: 64px;
+	width: 100%;
+	z-index: 10;
+	transition: all .3s;
+	&.bottomScroll{
+		background-color: rgba(0,0,0,0.3);
+		@include mq('sp-down'){
+			background-color: #fff;
+		}
+	}
+	@include mq('sp-down'){
+		height: 50px;
+	}
+
+}
+header{
+	&.bottomScroll{
+		.burger{
+			span{
+				background-color: #1a1a1a;
+			}
+		}
+	}
+	a{
+		font-size: 15px;
+	}
+	.burger{
+		z-index: 99;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		span{
+			display: block;
+			width: 24px;
+			height: 2px;
+			background-color: #fff;
+			margin-bottom: 4px;
+			transition: all .3s;
+		}
+		&.active{
+			span{
+				background-color: #fff;
+				&:first-child{
+					transform: rotate(45deg);
+					margin-bottom: -7.5px;
+				}
+				&:nth-child(2){
+					opacity: 0;
+				}
+				&:last-child{
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+
+}
+
+
+footer{
+	ul{
+		li{
+			a{
+				font-size: 16px;
+			}
+		}
+	}
+	.copyright{
+		font-size: 12px;
+	}
+}
