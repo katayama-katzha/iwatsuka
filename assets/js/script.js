@@ -92,5 +92,17 @@ jQuery(function($){
 
   });
 
+  const swiper = new Swiper(".banner-swiper", {
+    slidesPerView: 3.4,
+    centeredSlides: true,
+    loop:true,
+    spaceBetween:35,
+    threshold:10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+
 
 });

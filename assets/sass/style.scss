@@ -16,7 +16,7 @@ $breakpoints: (
 	"sp-up": "(min-width: 768px)",
 	"tab-down": "(max-width: 1024px)",
 	"tab-up": "(min-width: 1025px)",
-	"wide" : "(min-width: 1800px)"
+	"wide" : "(min-width: 1440px)"
 
 );
 
@@ -286,6 +286,11 @@ main{
 	font-family: $roboto;
 }
 
+h1{
+	font-size: 35px;
+	letter-spacing: 0.05em;
+}
+
 h2{
 	font-size: 32px;
 	letter-spacing: 0.1em;
@@ -317,26 +322,55 @@ time{
 
 header{
 	position: fixed;
-	height: 64px;
+	height: 70px;
 	width: 100%;
 	z-index: 10;
 	transition: all .3s;
 	&.bottomScroll{
-		background-color: rgba(0,0,0,0.3);
-		@include mq('sp-down'){
-			background-color: #fff;
-		}
+
 	}
-	@include mq('sp-down'){
-		height: 50px;
-	}
+
 
 }
 header{
+	
 	&.bottomScroll{
 		.burger{
 			span{
 				background-color: #1a1a1a;
+			}
+		}
+	}
+	.header-inner{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-left: 120px;
+		.right{
+			display: flex;
+
+		}
+		ul{
+			display: flex;
+			align-items: center;
+			li{
+				width: vw(150);
+				border-right: 1px solid #CBCBCB;
+				a{
+					display: flex;
+					height: 70px;
+					align-items: center;
+					justify-content: center;
+					 background-color: #e6e6e6;
+				}
+			}
+			.online{
+				width: vw(190);
+				border-right: none;
+				a{
+					background-color: $red;
+					color: white;
+				}
 			}
 		}
 	}
@@ -349,20 +383,24 @@ header{
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		width: 70px;
+		background-color: #c3c1c1;
 		span{
 			display: block;
-			width: 24px;
+			width: 21px;
 			height: 2px;
 			background-color: #fff;
-			margin-bottom: 4px;
+			margin-top: 3.5px;
+			margin-bottom: 3.5px;
 			transition: all .3s;
 		}
 		&.active{
 			span{
 				background-color: #fff;
+				will-change: transform,opacity,margin-bottom;
 				&:first-child{
 					transform: rotate(45deg);
-					margin-bottom: -7.5px;
+					margin-bottom: -14.5px;
 				}
 				&:nth-child(2){
 					opacity: 0;
@@ -376,6 +414,10 @@ header{
 
 }
 
+.banner{
+	background-color: #f2f2f2;
+}
+
 
 footer{
 	ul{
@@ -387,5 +429,105 @@ footer{
 	}
 	.copyright{
 		font-size: 12px;
+	}
+}
+
+.section-inner .pad-sec{
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.fv{
+	position: relative;
+	height: vw(810);
+	width: 100%;
+	video{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+	.section-inner{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		z-index: 2;
+		h1{
+			@include mq('wide'){
+				font-size: vw(35);
+			}
+			
+			-webkit-text-stroke: 0.5px #fff;
+			span{
+				position: relative;
+				font-size: 1.6em;
+				padding-left: vw(15);
+				padding-right: vw(15);
+				&::after{
+					content: "BEIKA";
+					position: absolute;
+					width: 100%;
+					height: auto;
+					font-size: 16px;
+					left: 0;
+					bottom: -28px;
+					text-align: center;
+					@include mq('wide'){
+						font-size: vw(16);
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.banner{
+	background-color: #f2f2f2;
+	position: relative;
+	padding-top: 120px;
+	padding-bottom: 60px;
+	@include mq('wide'){
+		padding-top: vw(120);
+		padding-bottom: vw(60);
+	}
+	&::before{
+		content: "IWATSUKASEIKA";
+		color: white;
+		font-size: vw(191);
+		letter-spacing: 0.05em;
+		font-family: $mincho;
+		left: vw(418);
+		position: absolute;
+		top: vw(37);
+	}
+	.section-inner{
+		position: relative;
+		z-index: 2;
+	}
+	.banner-swiper{
+		.swiper-slide{
+			img{
+				width: 100%;
+			}
+		}
+		.swiper-pagination{
+			position: static;
+			padding-top: 31px;
+			.swiper-pagination-bullet{
+				opacity: 1;
+				width: 7px;
+				height: 7px;
+				margin: 0 6.5px;
+				border: solid 1px #343434;
+				background-color: #ffffff;
+			}
+			.swiper-pagination-bullet-active{
+				background-color: #343434;
+			}
+		}
 	}
 }
