@@ -77,6 +77,15 @@ jQuery(function($){
     });
   });
 
+  $('.dot-link').hover(
+    function() {
+      $(this).next().addClass('scale')
+    },
+    function() {
+      $(this).next().removeClass('scale')
+    }
+);
+
 
   $(function () {
     $(window).on("scroll", function () {
@@ -101,6 +110,32 @@ jQuery(function($){
     pagination: {
       el: ".swiper-pagination",
       clickable: true
+    }
+  });
+
+  const swiper2 = new Swiper(".product-swiper", {
+    slidesPerView: 4.4,
+    centeredSlides: true,
+    loop:true,
+    spaceBetween:30,
+    threshold:10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+
+  const swiper3 = new Swiper(".about-swiper", {
+    slidesPerView: 3.4,
+    spaceBetween:30,
+    threshold:10,
+
+    scrollbar: {
+      el: '.swiper-scrollbar', 
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
     }
   });
 
