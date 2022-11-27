@@ -27,16 +27,21 @@ jQuery(function($){
 
   $(function(){
     if (window.matchMedia('(max-width: 767px)').matches){
-
+      const src = $('#fv-movie').attr('src').replace('fv-pc', 'fv-sp');
+      $('#fv-movie').attr('src', src);
     }else{
-
+      const src = $('#fv-movie').attr('src').replace('fv-sp', 'fv-pc');
+      $('#fv-movie').attr('src', src);
     };
    
 
   }());
+  
   $(window).resize(function() {
+
     if (window.matchMedia('(max-width: 767px)').matches){
 
+      
     }else{
 
     }
@@ -63,17 +68,22 @@ jQuery(function($){
     $( '.burger' ).on( 'click', function(e){
       $(this).toggleClass('active');
       $('.menu').toggleClass('active');
+      $('body').toggleClass('active');
       e.preventDefault();
     });
     $( '.menu a' ).on( 'click', function(e){
       $('.burger').removeClass('active');
       $('.menu').removeClass('active');
+      $('body').removeClass('active');
       e.preventDefault();
     });
-    $( '.box-ttl' ).on( 'click', function(e){
+    $( '.has-child' ).on( 'click', function(e){
       $(this).toggleClass('active');
-      $(this).next().slideToggle(600);
+      $(this).children('.child').slideToggle();
       e.preventDefault();
+    });
+    $('.has-child a').click(function(event){
+      event.stopPropagation();
     });
   });
 
@@ -102,32 +112,44 @@ jQuery(function($){
   });
 
   const swiper = new Swiper(".banner-swiper", {
-    slidesPerView: 3.4,
+    slidesPerView: 1.5,
     centeredSlides: true,
     loop:true,
-    spaceBetween:35,
+    spaceBetween:30,
     threshold:10,
     pagination: {
       el: ".swiper-pagination",
       clickable: true
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 3.4,
+        spaceBetween:35,
+      }
     }
   });
 
   const swiper2 = new Swiper(".product-swiper", {
-    slidesPerView: 4.4,
+    slidesPerView: 1.5,
     centeredSlides: true,
     loop:true,
-    spaceBetween:30,
+    spaceBetween:20,
     threshold:10,
     pagination: {
       el: ".swiper-pagination",
       clickable: true
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 4.4,
+        spaceBetween:30,
+      }
     }
   });
 
   const swiper3 = new Swiper(".about-swiper", {
-    slidesPerView: 3.4,
-    spaceBetween:30,
+    slidesPerView: 1.2,
+    spaceBetween:23,
     threshold:10,
 
     scrollbar: {
@@ -136,6 +158,12 @@ jQuery(function($){
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
+    },
+    breakpoints: {
+      767: {
+        slidesPerView: 3.4,
+        spaceBetween:30,
+      }
     }
   });
 
