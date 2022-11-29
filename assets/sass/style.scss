@@ -516,6 +516,25 @@ header{
 }
 
 
+.home{
+	.other-logo{
+		display: none;
+	}
+	.home-logo{
+		display: block;
+	}
+}
+
+body:not(.home){
+	.other-logo{
+		display: block;
+	}
+	.home-logo{
+		display: none;
+	}
+}
+
+
 
 .menu{
 	position: fixed;
@@ -1742,6 +1761,9 @@ footer{
 
 .product-archive{
 	margin-top: 70px;
+	@include mq('sp-down'){
+		margin-top: 50px;
+	}
 }
 
 .breadcrumb{
@@ -1750,6 +1772,11 @@ footer{
 	padding-left: 120px;
 	padding-top: 12.5px;
 	padding-bottom: 12.5px;
+	@include mq('note-down'){
+		padding-left: 30px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 	ul{
 		display: flex;
 		li{
@@ -1763,6 +1790,10 @@ footer{
 				position: absolute;
 				right: -22px;
 				top: 2px;
+				@include mq('sp-down'){
+					font-size: 12px;
+					top: 3.5px;
+				}
 			}
 			&:last-child{
 				margin-right: 0;
@@ -1773,6 +1804,9 @@ footer{
 			a,span{
 				color: #707070;
 				font-size: 14px;
+				@include mq('sp-down'){
+					font-size: 12px;
+				}
 			}
 		}
 	}
@@ -1786,6 +1820,14 @@ footer{
 		font-size: 34px;
 		font-weight: normal;
 		color: #444444;
+		@include mq('note-down'){
+			font-size: 22px;
+		}
+	}
+	@include mq('note-down'){
+		padding-top: 30px;
+		padding-bottom: 30px;
+		padding-left: 30px;
 	}
 }
 
@@ -1798,12 +1840,20 @@ footer{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@include mq('sp-down'){
+		height: vw2(300);
+	}
 	h2{
 		font-size: 30px;
 		color: white;
 		font-weight: 500;
 		position: relative;
 		z-index: 2;
+		@include mq('sp-down'){
+			font-size: 22px;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
 	}
 	position: relative;
 	&::after{
@@ -1829,13 +1879,29 @@ footer{
 	padding-right: 30px;
 	padding-top: 110px;
 	padding-bottom: 50px;
-	
+	@include mq('tab-down'){
+		padding-top: 40px;
+	}
 	.section-inner{
 		max-width: vw(1200);
 		margin: auto;
 		display: flex;
+		@include mq('note-down'){
+			max-width: unset;
+			width: 100%;
+		}
+		@include mq('sp-down'){
+			flex-direction: column;
+		}
+
+		.sticky-wrapper{
+			@include mq('sp-down'){
+
+			}
+		}
+
 		.left{
-			width: vw(220);
+			width: 220px;
 			padding: 30px 28px;
 			padding-top: 10px;
 			background-color: #fff;
@@ -1843,11 +1909,29 @@ footer{
 			box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.06);
 			position: sticky;
 			top: 60px;
-			
+			@include mq('wide'){
+				width: vw(220);
+				
+			}
+			@include mq('sp-down'){
+				position: static;
+				width: 100%;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-bottom: 20px;
+			}
 			ul{
+				@include mq('sp-down'){
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+				}
 				li{
 					border-bottom: 1px solid #e8e8e8;
-
+					@include mq('sp-down'){
+						width: 48%;
+						
+					}
 					a{
 						display: flex;
 						justify-content: space-between;
@@ -1878,19 +1962,40 @@ footer{
 								height: 1.5px;
 							}
 						}
+						@include mq('sp-down'){
+							font-size: 12px;
+							img{
+								transform: rotate(90deg);
+								margin-left: 0;
+							}
+						}
 					}
 				}
 			}
 		}
 		.right{
-			width: vw(980);
+			width: 980px;
+			width: calc(100% - 220px);
 			padding-left: 40px;
+			@include mq('wide'){
+				width: vw(980);
+			}
+			@include mq('sp-down'){
+				width: 100%;
+				padding-left: 0;
+				padding-top: 30px;
+			}
 			h3{
 				font-size: 30px;
 				padding-left: 20px;
 				position: relative;
 				letter-spacing: 0;
 				line-height: 44px;
+				@include mq('sp-down'){
+					font-size: 22px;
+					padding-left: 10px;
+					margin-bottom: 20px;
+				}
 				&::before{
 					content: "";
 					width: 3px;
@@ -1914,6 +2019,13 @@ footer{
 					img{
 						width: 100%;
 					}
+					@include mq('sp-down'){
+						height: vw2(200);
+						img{
+							height: 100%;
+							object-fit: contain;
+						}
+					}
 				}
 				.p-ttl{
 					font-size: 16px;
@@ -1921,6 +2033,9 @@ footer{
 					text-align: center;
 					padding-top: 20px;
 					transition: all .4s;
+					@include mq('sp-down'){
+						font-size: 12px;
+					}
 				}
 				.card{
 					position: relative;
@@ -1943,42 +2058,86 @@ footer{
 				.card{
 					width: 19.15%;
 					margin-right: 7.8%;
+					@include mq('sp-down'){
+						width: 48%;
+						margin-right: 4%;
+						&:nth-child(2n){
+							margin-right: 0;
+						}
+					}
 					.img-wrapper{
 						padding-left: vw(20);
 						padding-right: vw(20);
-						
+						@include mq('sp-down'){
+							padding-left: vw2(10);
+							padding-right: vw2(10);
+						}
 					}
 					&:nth-child(4n){
 						margin-right: 0;
 					}
+					
 				}
 			}
 
 			.assort{
 				padding-top: 30px;
+				@include mq('sp-down'){
+					padding-top: 20px;
+				}
 				.card{
 					width: 20.2%;
 					margin-right: 6.4%;
+					@include mq('sp-down'){
+						width: 48%;
+						margin-right: 4%;
+						&:nth-child(2n){
+							margin-right: 0;
+						}
+					}
 					.img-wrapper{
 						padding-left: 0;
 						padding-right: 0;
 						height: vw(140);
+						@include mq('sp-down'){
+							height: vw2(140);
+							padding-left: vw2(10);
+							padding-right: vw2(10);
+						}
 					}
 				}
 			}
 
 			.normal{
 				padding-top: 30px;
+				@include mq('sp-down'){
+					padding-top: 20px;
+				}
 				.card{
 					width: 15.95%;
 					margin-right: 5.0625%;
+					@include mq('sp-down'){
+						width: 48%;
+						margin-right: 4%;
+						&:nth-child(2n){
+							margin-right: 0;
+						}
+					}
 					.img-wrapper{
 						padding-left: vw(14);
 						padding-right: vw(14);
+						@include mq('sp-down'){
+							padding-left: vw2(10);
+							padding-right: vw2(10);
+
+						}
 					}
-					&:nth-child(5n){
-						margin-right: 0;
+					@include mq('sp-up'){
+						&:nth-child(5n){
+							margin-right: 0;
+						}
 					}
+
 				}
 			}
 		}
@@ -1986,7 +2145,7 @@ footer{
 
 
 	.sec2{
-		padding:56px 80px 50px 70px;
+		padding: vw(56) vw(80) vw(50) vw(70);
 		border-radius: 20px;
 		box-shadow: 0 0 15px 0 rgba(118, 118, 118, 0.16);
 		display: flex;
@@ -1997,36 +2156,66 @@ footer{
 		position: relative;
 		transition: all .3s;
 		top: 0;
+		@include mq('sp-down'){
+			margin-top: 50px;
+			flex-direction: column;
+			padding: 20px 10px;
+			border-radius: 10px;
+		}
 		.left{
 			display: flex;
 			align-items: center;
 			.net1{
 				width: vw(188);
-				margin-right: 10px;
+				margin-right: vw(10);
+				@include mq('sp-down'){
+					width: vw2(94);
+					margin-right: vw2(10);
+				}
 			}
 			.net2{
 				width: vw(148);
-				margin-right: 10px;
+				margin-right: vw(10);
+				@include mq('sp-down'){
+					width: vw2(74);
+					margin-right: vw2(10);
+				}
 			}
 			.net3{
 				width: vw(175);
+				@include mq('sp-down'){
+					width: vw2(87.5);
+					margin-right: vw2(10);
+				}
 			}
 		}
 		.right{
 			padding-left: vw(50);
 			display: flex;
 			align-items: flex-end;
+			@include mq('sp-down'){
+				padding-left: 0;
+				position: relative;
+			}
 			h2{
 				font-size: vw(30);
 				color: #444444;
 				margin-bottom: 5px;
 				letter-spacing: 0.04em;
 				line-height: 1.4666em;
+				@include mq('sp-down'){
+					font-size: vw2(20);
+					text-align: center;
+				}
 			}
 			p{
 				font-size: vw(16);
 				letter-spacing: 0.04em;
 				line-height: 1.5em;
+				@include mq('sp-down'){
+					font-size: vw2(12);
+					text-align: center;
+				}
 			}
 			.arrow{
 				margin-left: vw(30);
@@ -2042,6 +2231,9 @@ footer{
 					width: vw(17.3);
 					height: auto;
 				}
+				@include mq('sp-down'){
+					display: none;
+				}
 			}
 		}
 		&:hover{
@@ -2054,7 +2246,7 @@ footer{
 }
 
 .red-banner{
-	padding: 70px 120px;
+	padding: vw(70) vw(120);
 	background-image: url(../img/products/red-area-bg.webp);
 	background-size: cover;
 	position: relative;
@@ -2073,6 +2265,10 @@ footer{
 		z-index: 2;
 		display: flex;
 		justify-content: space-between;
+		@include mq('sp-down'){
+			flex-direction: column;
+			align-items: center;
+		}
 		.card{
 			height: vw(190);
 			width: calc(33.33% - vw(50));
@@ -2081,6 +2277,14 @@ footer{
 			align-items: center;
 			top: 0;
 			transition: all .3s;
+			@include mq('sp-down'){
+				width: 100%;
+				height: vw2(190);
+				margin-bottom: vw2(20);
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
 			&::after{
 				content: "";
 				width: 100%;
@@ -2125,6 +2329,20 @@ footer{
 					img{
 						width: vw(11.2);
 						height: auto;
+					}
+				}
+				@include mq('sp-down'){
+					padding-left: vw2(20);
+					padding-right: vw2(20);
+					h3{
+						font-size: vw2(20);
+					}
+					.arrow{
+						width: vw2(40);
+						height: vw2(40);
+						img{
+							width: vw2(11.2);
+						}
 					}
 				}
 			}
