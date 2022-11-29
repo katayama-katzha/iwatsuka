@@ -2356,3 +2356,235 @@ footer{
 	}
 
 }
+
+
+.product-detail{
+
+	padding-top: 80px;
+	padding-bottom: 140px;
+	@include mq('tab-down'){
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
+	@include mq('sp-down'){
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.section-inner{
+		max-width: vw(1200);
+		margin: auto;
+		@include mq('sp-down'){
+			max-width: unset;
+		}
+		h2{
+			font-weight: bold;
+			color: #171717;
+			margin-bottom: vw(40);
+			letter-spacing: 0;
+			@include mq('sp-down'){
+				margin-bottom: vw2(10);
+			}
+		}
+		th,td{
+			font-size: vw(16);
+			@include mq('tab-down'){
+				font-size: 12px;
+			}
+		}
+		.top,.bottom{
+			display: flex;
+			@include mq('sp-down'){
+				flex-direction: column;
+			}
+			h4{
+				position: relative;
+				padding-left: vw(20);
+				font-size: vw(20);
+				letter-spacing: 0.05em;
+				margin-bottom: vw(40);
+				@include mq('tab-down'){
+					font-size: 16px;
+					padding-left: 10px;
+					margin-bottom: 20px;
+				}
+				&::before{
+					content: "";
+					width: vw(5);
+					height: vw(18);
+					background-color: $red;
+					top: vw(1);
+					left: 0;
+					position: absolute;
+					@include mq('tab-down'){
+						width: 5px;
+						height: 14px;
+						top: 2px;
+					}
+				}
+			}
+		}
+		.top{
+			align-items: center;
+		}
+		.bottom{
+			align-items: flex-start;
+			padding-top: vw(60);
+			@include mq('sp-down'){
+				padding-top: 40px;
+				.right{
+					margin-top: 40px;
+				}
+			}
+		}
+		.left{
+			width: 42%;
+			@include mq('sp-down'){
+				width: 100%;
+			}
+			.img-wrapper{
+				margin-left: vw(35);
+				width: vw(380);
+				height: vw(400);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding-top: vw(14);
+				padding-bottom: vw(8);
+				img{
+					max-width: 100%;
+					max-height: 100%;
+				}
+				@include mq('sp-down'){
+					width: 100%;
+					height: vw2(300);
+					margin-left: 0;
+				}
+			}
+			.seibun{
+
+				.seibun-table{
+					width: 100%;
+					max-width: vw(380);
+					@include mq('sp-down'){
+						max-width: 100%;
+					}
+					tr{
+						border-bottom: 1px solid #d8d8d8;
+						border-top: 1px solid #d8d8d8;
+					}
+					th{
+						background-color: #f2f2f2;
+						text-align: center;
+						font-weight: 500;
+						padding-top: vw(15);
+						padding-bottom: vw(15);
+						width: vw(150);
+						@include mq('sp-down'){
+							width: vw2(100);
+							text-align: center;
+							padding-top: 10px;
+							padding-bottom: 10px;
+							line-height: 1.75em;
+						}
+					}
+					td{
+						text-align: right;
+						padding-left: vw(10);
+						padding-right: vw(10);
+						@include mq('sp-down'){
+							padding-left: 10px;
+							padding-right: 0px;
+						}
+						&:nth-child(2){
+							border-right: 1px dotted #d8d8d8;
+							@include mq('sp-down'){
+								padding-right: 10px;
+							}
+
+						}
+					}
+				}
+			}
+		}
+		.right{
+			width: 58%;
+			@include mq('sp-down'){
+				width: 100%;
+				margin-top: 20px;
+			}
+			.table-wrapper{
+				padding-left: vw(50);
+				@include mq('sp-down'){
+					padding-left: 0;
+				}
+				tr{
+					border-top: 1px solid #d8d8d8;
+					border-bottom: 1px solid #d8d8d8;
+				}
+				td{
+					padding-top: vw(15);
+					padding-bottom: vw(15);
+					padding-left: vw(25);
+					vertical-align: baseline;
+					line-height: 1.75em;
+					@include mq('sp-down'){
+						padding-top: 10px;
+						padding-bottom: 10px;
+						padding-left: 15px;
+					}
+				}
+				th{
+					width: vw(150);
+					background-color: #f2f2f2;
+					padding-left: vw(28);
+					font-weight: 500;
+					@include mq('sp-down'){
+						width: vw2(100);
+						text-align: center;
+						padding-left: 0;
+					}
+				}
+			}
+			.table-wrapper2{
+				padding-top: vw(24);
+				margin-bottom: vw(30);
+				@include mq('sp-down'){
+					margin-top: 20px;
+					padding-top: 0;
+					margin-bottom: 20px;
+				}
+				.allergy-table{
+					width: 100%;
+					
+				}
+				tr{
+					border-top: 1px solid #d8d8d8;
+					border-bottom: 1px solid #d8d8d8;
+				}
+				td{
+					padding-top: vw(15);
+					padding-bottom: vw(15);
+					padding-left: vw(25);
+					line-height: 1.75em;
+				}
+				th{
+					width: 50%;
+					background-color: #f2f2f2;
+					padding-left: vw(28);
+					font-weight: 500;
+					padding-top: vw(15);
+					padding-bottom: vw(15);
+					line-height: 1.75em;
+				}
+			}
+			.notice-ttl,.notice2{
+				font-size: vw(16);
+				font-weight: normal;
+				line-height: 1.75em;
+				@include mq('tab-down'){
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}
