@@ -2740,6 +2740,11 @@ footer .copyright p {
 .content {
   padding-bottom: 120px;
 }
+@media (max-width: 767px) {
+  .content {
+    padding-bottom: 50px;
+  }
+}
 .content h3 {
   font-size: 28px;
   letter-spacing: 0.05em;
@@ -2756,11 +2761,27 @@ footer .copyright p {
   color: #444444;
   font-weight: normal;
 }
+@media (max-width: 767px) {
+  .content p {
+    font-size: 14px;
+  }
+}
 .content .ttl-wrapper {
   padding-left: 120px;
   display: flex;
   justify-content: space-between;
   margin-bottom: -10px;
+}
+@media (max-width: 1280px) {
+  .content .ttl-wrapper {
+    padding-left: 30px;
+    padding-top: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .content .ttl-wrapper {
+    position: relative;
+  }
 }
 .content .ttl-wrapper h3 {
   padding-left: 23px;
@@ -2776,18 +2797,69 @@ footer .copyright p {
   top: 7.5px;
   left: 0;
 }
+@media (max-width: 1280px) {
+  .content .ttl-wrapper h3 {
+    font-size: 20px;
+    padding-left: 15px;
+  }
+  .content .ttl-wrapper h3::before {
+    top: 3px;
+  }
+}
+@media (max-width: 767px) {
+  .content .ttl-wrapper h3 {
+    position: relative;
+    margin-top: 0;
+    padding-bottom: 30px;
+    padding-left: 0px;
+    z-index: 2;
+  }
+  .content .ttl-wrapper h3::before {
+    left: -10px;
+  }
+}
 .content .ttl-wrapper h6 {
   font-size: 153px;
   color: #f2f2f2;
   letter-spacing: 0.05em;
 }
+@media (max-width: 1280px) {
+  .content .ttl-wrapper h6 {
+    font-size: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .content .ttl-wrapper h6 {
+    position: absolute;
+    right: 0;
+    font-size: 16vw;
+    top: 0;
+  }
+}
 .content .section-inner {
   padding-left: 120px;
   padding-right: 120px;
 }
+@media (max-width: 1280px) {
+  .content .section-inner {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 .content .section-inner h4 {
   padding-bottom: 1.45em;
   line-height: 1.4em;
+}
+@media (max-width: 1280px) {
+  .content .section-inner h4 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .content .section-inner h4 {
+    text-align: center;
+    padding-bottom: 10px;
+  }
 }
 .content .section-inner .signature {
   text-align: right;
@@ -2796,23 +2868,51 @@ footer .copyright p {
 .content .section-inner .main-column {
   width: 63.3333%;
 }
+@media (max-width: 767px) {
+  .content .section-inner .main-column {
+    width: 100%;
+  }
+}
 .content .section-inner .sub-column {
   width: 36.6667%;
+}
+@media (max-width: 767px) {
+  .content .section-inner .sub-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 .content .section-inner .sub-column .small-img {
   display: block;
   margin-left: auto;
   width: 64.3%;
 }
+@media (max-width: 1280px) {
+  .content .section-inner .sub-column .small-img {
+    width: 80%;
+    margin: auto;
+  }
+}
 .content .section-inner .columns {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .content .section-inner .columns {
+    flex-direction: column-reverse;
+  }
 }
 
 .page-cards {
   padding-left: 120px;
   padding-right: 120px;
   padding-bottom: 90px;
+}
+@media (max-width: 1280px) {
+  .page-cards {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 .page-cards .section-inner {
   display: flex;
@@ -2829,6 +2929,26 @@ footer .copyright p {
 }
 .page-cards .section-inner .card:nth-child(3n) {
   margin-right: 0;
+}
+@media (max-width: 1280px) {
+  .page-cards .section-inner .card {
+    width: 30%;
+    margin-right: 5%;
+  }
+}
+@media (max-width: 767px) {
+  .page-cards .section-inner .card {
+    width: 48%;
+    margin-right: 4%;
+    height: 26.6666666667vw;
+    margin-bottom: 10px;
+  }
+  .page-cards .section-inner .card:nth-child(3n) {
+    margin-right: 4%;
+  }
+  .page-cards .section-inner .card:nth-child(2n) {
+    margin-right: 0;
+  }
 }
 .page-cards .section-inner .card img {
   position: absolute;
@@ -2851,8 +2971,26 @@ footer .copyright p {
   font-weight: 500;
   letter-spacing: 0.1em;
 }
+@media (max-width: 1024px) {
+  .page-cards .section-inner .card .card-inner h4 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .page-cards .section-inner .card .card-inner h4 {
+    font-size: 16px;
+  }
+}
 .page-cards .section-inner .card .card-inner p {
   padding-top: 5px;
+}
+@media (max-width: 1024px) {
+  .page-cards .section-inner .card .card-inner p {
+    font-size: 12px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 .page-cards .section-inner .card:hover img {
   transform: scale(1.1);
