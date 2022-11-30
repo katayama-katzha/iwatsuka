@@ -3127,6 +3127,11 @@ footer .copyright p {
 .content .section-inner .catch span:not(.sp-hide) {
   color: #e71a25;
 }
+@media (min-width: 768px) {
+  .content .section-inner .catch .sp-hide {
+    display: inline;
+  }
+}
 @media (max-width: 1280px) {
   .content .section-inner .catch {
     font-size: 24px;

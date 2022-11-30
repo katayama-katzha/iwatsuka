@@ -2974,6 +2974,11 @@ footer{
 			span:not(.sp-hide){
 				color: $red;
 			}
+			@include mq('sp-up'){
+				.sp-hide{
+					display: inline;
+				}
+			}
 			@include mq('note-down'){
 				font-size: 24px;
 			}
