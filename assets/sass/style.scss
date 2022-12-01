@@ -1905,6 +1905,12 @@ footer{
 		display: none;
 	}
 }
+.cultivation-fv{
+	background-image: url(../img/cultivation/cuntivation-fv.webp);
+	&::after{
+		display: none;
+	}
+}
 
 .product-archive{
 	overflow: visible;
@@ -2289,6 +2295,19 @@ footer{
 	background-image: url(../img/products/red-area-bg.webp);
 	background-size: cover;
 	position: relative;
+	.center{
+		font-size: vw(28);
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		font-weight: 500;
+		padding-bottom: 44px;
+		@include mq('sp-down'){
+			font-size: vw2(16);
+			padding-top: vw2(20);
+			padding-bottom: vw2(40);
+		}
+	}
 	&::after{
 		content: "";
 		width: 100%;
@@ -2355,6 +2374,7 @@ footer{
 				h3{
 					font-size: vw(22);
 					color: white;
+					line-height: 1.4em;
 				}
 				.arrow{
 					width: vw(40);
@@ -2374,7 +2394,7 @@ footer{
 					padding-left: vw2(20);
 					padding-right: vw2(20);
 					h3{
-						font-size: vw2(20);
+						font-size: vw2(16);
 					}
 					.arrow{
 						width: vw2(40);
@@ -3484,6 +3504,12 @@ footer{
 			font-weight: normal;
 			letter-spacing: 0;
 			margin-bottom: 80px;
+			&.ttl-center2{
+				margin-bottom: 120px;
+				@include mq('sp-down'){
+					margin-bottom: 40px;
+				}
+			}
 			@include mq('sp-down'){
 				font-size: 20px;
 				margin-bottom: 40px;
@@ -3534,6 +3560,16 @@ footer{
 					@include mq('sp-down'){
 						width: 3px;
 						top: 3px;
+					}
+				}
+				&.h3-red2{
+					&::before{
+						background-color: $red;
+						width: 3px;
+						top: 12px;
+						@include mq('sp-down'){
+							top: 4.5px;
+						}
 					}
 				}
 				&.h3-red{
@@ -3615,6 +3651,8 @@ footer{
 						padding-left: 0;
 					}
 				}
+
+
 			}
 			.flex2{
 				flex-direction: row-reverse;
@@ -3642,9 +3680,151 @@ footer{
 					}
 				}
 			}
+			.flex3{
+				justify-content: space-between;
+				align-items: flex-end;
+				margin-bottom: 90px;
+				.left2{
+					width: 53.334%;
+					padding-right: 80px;
+				}
+
+				.right2{
+					display: flex;
+					justify-content: space-between;
+					width: 46.666%;
+					.right-card{
+						width: calc(50% - 10px);
+						height: auto;
+						img{
+							width: 100%;
+						}
+						.caption{
+							text-align: center;
+							padding-top: 10px;
+							font-weight: 500;
+						}
+					}
+					@include mq('sp-down'){
+						flex-direction: column;
+						.right-card{
+							width: 100%;
+							margin-bottom: 20px;
+						}
+						&.right2-reverse{
+							flex-direction: column-reverse;
+						}
+					}
+				}
+				&.reverse{
+					flex-direction: row-reverse;
+					.left2{
+						padding-right: 0;
+						padding-left: 80px;
+					}
+				}
+				@include mq('sp-down'){
+					flex-direction: column;
+					&.reverse{
+						flex-direction: column;
+						.left2{
+							padding-left: 0;
+						}
+					}
+					.left2,.right2{
+						width: 100%;
+
+					}
+					.left2{
+						padding-right: 0;
+						margin-bottom: 20px;
+					}
+				}
+				
+			}
+			.mb0{
+				margin-bottom: 0px;
+			}
 		}
 		.pb0{
 			padding-bottom: 0;
+		}
+		.pb30{
+			padding-bottom: 30px;
+		}
+		.btn-wrapper{
+			display: flex;
+			justify-content: center;
+			a{
+				display: block;
+				border: 1px solid #444444;
+				border-radius: 32.5px;
+				line-height: 65px;
+				font-size: 18px;
+				padding-left: 40px;
+				padding-right: 68px;
+				position: relative;
+				background-color: #444444;
+				font-weight: normal;
+
+				&::before{
+					content: "";
+					width: 9px;
+					height: 9px;
+					border-radius: 50%;
+					background-color: #f5f5f5;
+					position: absolute;
+					top: calc(50% - 4.5px);
+					right: 35px;
+					z-index: 2;
+					transition: all .4s;
+				}
+				&::after{
+					content: "";
+					width: 0%;
+					height: 100%;
+					position: absolute;
+					background-color: white;
+					left: 50%;
+					top: 0;
+					border-radius: 32.5px;
+					transition: all .4s;
+				}
+				span{
+					position: relative;
+					color: white;
+					z-index: 2;
+					transition: all .4s;
+				}
+				@include mq('sp-down'){
+					font-size: 14px;
+					line-height: 1.4em;
+					padding-left: 25px;
+					padding-right: 25px;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					text-align: center;
+					&::before{
+						right: 20px;
+					}
+				}
+				@include mq('sp-up'){
+					&:hover{
+						span{
+							color: #444444;
+						}
+						&::after{
+							width: 100%;
+							left: 0%;
+						}
+						&::before{
+							background-color: #444444;
+							
+						}
+					}
+				}
+
+			}
 		}
 		.gray-wrapper{
 			h1{
