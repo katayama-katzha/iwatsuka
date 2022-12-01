@@ -3498,6 +3498,42 @@ footer{
 				margin-bottom: 40px;
 			}
 		}
+		.t-right{
+			text-align: right;
+			margin-bottom: 50px;
+			@include mq('sp-down'){
+				margin-bottom: 20px;
+			}
+		}
+		.p-center{
+			text-align: center;
+			font-size: 20px;
+			padding-bottom: 50px;
+			font-weight: normal;
+			@include mq('sp-down'){
+				font-size: 16px;
+				padding-bottom: 25px;
+			}
+		}
+		.radio-p{
+			font-size: 16px;
+			line-height: 2.125em;
+			font-weight: normal;
+			padding-bottom: 1.5em;
+			@include mq('sp-down'){
+				font-size: 14px;
+			}
+		}
+		.radio-signature{
+			text-align: right;
+			font-weight: normal;
+			padding-bottom: 30px;
+			@include mq('sp-down'){
+				font-size: 14px;
+				
+			}
+		}
+
 		.ttl-center{
 			text-align: center;
 			font-size: 38px;

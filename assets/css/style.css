@@ -3726,6 +3726,48 @@ footer .copyright p {
     margin-bottom: 40px;
   }
 }
+.quality-sec .section-inner .t-right, .food-quality-sec .section-inner .t-right, .iso22000-sec .section-inner .t-right {
+  text-align: right;
+  margin-bottom: 50px;
+}
+@media (max-width: 767px) {
+  .quality-sec .section-inner .t-right, .food-quality-sec .section-inner .t-right, .iso22000-sec .section-inner .t-right {
+    margin-bottom: 20px;
+  }
+}
+.quality-sec .section-inner .p-center, .food-quality-sec .section-inner .p-center, .iso22000-sec .section-inner .p-center {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 50px;
+  font-weight: normal;
+}
+@media (max-width: 767px) {
+  .quality-sec .section-inner .p-center, .food-quality-sec .section-inner .p-center, .iso22000-sec .section-inner .p-center {
+    font-size: 16px;
+    padding-bottom: 25px;
+  }
+}
+.quality-sec .section-inner .radio-p, .food-quality-sec .section-inner .radio-p, .iso22000-sec .section-inner .radio-p {
+  font-size: 16px;
+  line-height: 2.125em;
+  font-weight: normal;
+  padding-bottom: 1.5em;
+}
+@media (max-width: 767px) {
+  .quality-sec .section-inner .radio-p, .food-quality-sec .section-inner .radio-p, .iso22000-sec .section-inner .radio-p {
+    font-size: 14px;
+  }
+}
+.quality-sec .section-inner .radio-signature, .food-quality-sec .section-inner .radio-signature, .iso22000-sec .section-inner .radio-signature {
+  text-align: right;
+  font-weight: normal;
+  padding-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .quality-sec .section-inner .radio-signature, .food-quality-sec .section-inner .radio-signature, .iso22000-sec .section-inner .radio-signature {
+    font-size: 14px;
+  }
+}
 .quality-sec .section-inner .ttl-center, .food-quality-sec .section-inner .ttl-center, .iso22000-sec .section-inner .ttl-center {
   text-align: center;
   font-size: 38px;
