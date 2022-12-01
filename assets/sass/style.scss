@@ -3296,6 +3296,69 @@ footer{
 	}
 }
 
+.footer-company-info{
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	height: vw(260);
+	width: 100%;
+	overflow: hidden;
+	@include mq('sp-down'){
+		height: vw2(200);
+	}
+	img{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: all .4s;
+	}
+	&:hover{
+		img{
+			transform: scale(1.05);
+		}
+	}
+	.section-inner{
+		position: relative;
+		z-index: 2;
+		display: flex;
+		align-items: flex-end;
+		padding-left: vw(190);
+		width: 100%;
+		justify-content: space-between;
+		@include mq('sp-down'){
+			flex-direction: column;
+			
+		}
+		h1{
+			font-size: vw(36);
+			letter-spacing: 0.07em;
+			color: white;
+			padding-bottom: vw(90);
+			@include mq('sp-down'){
+				font-size: vw2(24);
+				padding-right: 20px;
+				padding-bottom: vw2(45);
+				width: 100%;
+				text-align: left;
+			}
+		}
+		.mincho{
+			letter-spacing: 0.05em;
+			font-size: vw(164);
+			color: white;
+			opacity: 0.3;
+			line-height: vw(120);
+			@include mq('sp-down'){
+				font-size: vw2(60);
+				line-height: vw2(45);
+			}
+		}
+	}
+}
+
 .page-cards{
 	padding-left: 120px;
 	padding-right: 120px;

@@ -3505,6 +3505,74 @@ footer .copyright p {
   line-height: 2em;
 }
 
+.footer-company-info {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 18.0555555556vw;
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .footer-company-info {
+    height: 53.3333333333vw;
+  }
+}
+.footer-company-info img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s;
+}
+.footer-company-info:hover img {
+  transform: scale(1.05);
+}
+.footer-company-info .section-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 13.1944444444vw;
+  width: 100%;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .footer-company-info .section-inner {
+    flex-direction: column;
+  }
+}
+.footer-company-info .section-inner h1 {
+  font-size: 2.5vw;
+  letter-spacing: 0.07em;
+  color: white;
+  padding-bottom: 6.25vw;
+}
+@media (max-width: 767px) {
+  .footer-company-info .section-inner h1 {
+    font-size: 6.4vw;
+    padding-right: 20px;
+    padding-bottom: 12vw;
+    width: 100%;
+    text-align: left;
+  }
+}
+.footer-company-info .section-inner .mincho {
+  letter-spacing: 0.05em;
+  font-size: 11.3888888889vw;
+  color: white;
+  opacity: 0.3;
+  line-height: 8.3333333333vw;
+}
+@media (max-width: 767px) {
+  .footer-company-info .section-inner .mincho {
+    font-size: 16vw;
+    line-height: 12vw;
+  }
+}
+
 .page-cards {
   padding-left: 120px;
   padding-right: 120px;
