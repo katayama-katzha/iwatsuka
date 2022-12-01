@@ -3453,7 +3453,7 @@ footer{
 
 // 品質と鮮度
 
-.quality-sec,.food-quality-sec{
+.quality-sec,.food-quality-sec,.iso22000-sec{
 	padding-left: 30px;
 	padding-right: 30px;
 	.section-inner{
@@ -3683,4 +3683,77 @@ footer{
 			}
 		}
 	}
+}
+
+.iso22000-sec{
+	.section-inner{
+		.wrapper{
+			p{
+				color: #171717;
+				line-height: 2.625em;
+				display: flex;
+				@include mq('sp-down'){
+					line-height: 2em;
+				}
+				strong{
+					font-weight: bold;
+					white-space: nowrap;
+					@include mq('sp-down'){
+						min-width: 100px;
+					}
+				}
+			}
+		}
+		.flex-wrapper{
+			display: flex;
+
+			@include mq('sp-down'){
+				flex-direction: column;
+			}
+			.right{
+				width: 254px;
+				@include mq('sp-down'){
+					width: 100%;
+				}
+				img{
+					width: 100%;
+					@include mq('sp-down'){
+						width: 80%;
+						display: block;
+						margin: auto;
+					}
+				}
+			}
+			.left{
+				padding-right: 80px;
+				width: calc(100% - 254px);
+				@include mq('sp-down'){
+					width: 100%;
+					padding-right: 0;
+					margin-bottom: 20px;
+				}
+				table{
+					width: 100%;
+					tr{
+						border-bottom: 1px solid #d8d8d8;
+						th,td{
+							padding-top: 19.5px;
+							padding-bottom: 14.5px;
+							@include mq('sp-down'){
+								line-height: 1.4em;
+								font-size: 14px;
+							}
+						}
+						th{
+							font-weight: bold;
+							@include mq('sp-down'){
+								width: 120px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 }
