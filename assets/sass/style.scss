@@ -3453,7 +3453,7 @@ footer{
 
 // 品質と鮮度
 
-.quality-sec{
+.quality-sec,.food-quality-sec{
 	padding-left: 30px;
 	padding-right: 30px;
 	.section-inner{
@@ -3467,6 +3467,16 @@ footer{
 		}
 		h2,h3,h4,h5,h6,p,span{
 			color: #444444;
+		}
+		.intro{
+			font-size: 18px;
+			line-height: 2em;
+			font-weight: normal;
+			margin-bottom: 75px;
+			@include mq('sp-down'){
+				font-size: 16px;
+				margin-bottom: 40px;
+			}
 		}
 		.ttl-center{
 			text-align: center;
@@ -3526,6 +3536,48 @@ footer{
 						top: 3px;
 					}
 				}
+				&.h3-red{
+					font-size: 22px;
+					line-height: 32px;
+					padding-left: 20px;
+					margin-bottom: 30px;
+					@include mq('sp-down'){
+						font-size: 18px;
+						padding-left: 10px;
+						margin-bottom: 20px;
+						line-height: 24px;
+					}
+					&::before{
+						background-color: $red;
+						width: 3px;
+						top: 8.5px;
+						@include mq('sp-down'){
+							top: 4.5px;
+						}
+					}
+				}
+			}
+			ol{
+				list-style: auto;
+				padding-left: 16px;
+				li{
+					list-style-type: auto;
+					font-size: 16px;
+					line-height: 2em;
+					margin-bottom: 22px;
+					font-weight: normal;
+					padding-left: 5px;
+					@include mq('sp-down'){
+						font-size: 14px;
+						margin-bottom: 10px;
+					}
+					&::marker{
+						color: $red;
+					}
+				}
+			}
+			.signature{
+				text-align: right;
 			}
 			p{
 				font-weight: normal;
@@ -3590,6 +3642,9 @@ footer{
 					}
 				}
 			}
+		}
+		.pb0{
+			padding-bottom: 0;
 		}
 		.gray-wrapper{
 			h1{
