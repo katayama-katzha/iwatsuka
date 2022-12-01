@@ -1899,6 +1899,13 @@ footer{
 	}
 }
 
+.quality-fv{
+	background-image: url(../img/quality/safety-fv.webp);
+	&::after{
+		display: none;
+	}
+}
+
 .product-archive{
 	overflow: visible;
 	section:not(.products-section){
@@ -3265,9 +3272,8 @@ footer{
 				width: 100%;
 				margin-bottom: 20px;
 			}
+			overflow: hidden;
 			border-radius: 15px;
-			border-top-left-radius: 30px;
-			border-top-right-radius: 30px;
 			box-shadow: 0 0 15px 0 rgba(118, 118, 118, 0.16);
 			position: relative;
 			top: 0;
@@ -3442,4 +3448,184 @@ footer{
 		}
 	}
 
+}
+
+
+// 品質と鮮度
+
+.quality-sec{
+	padding-left: 30px;
+	padding-right: 30px;
+	.section-inner{
+		max-width: 1200px;
+		margin: auto;
+		padding-top: 90px;
+		padding-bottom: 110px;
+		@include mq('sp-down'){
+			padding-top: 40px;
+			padding-bottom: 50px;
+		}
+		h2,h3,h4,h5,h6,p,span{
+			color: #444444;
+		}
+		.ttl-center{
+			text-align: center;
+			font-size: 38px;
+			font-weight: normal;
+			letter-spacing: 0;
+			margin-bottom: 80px;
+			@include mq('sp-down'){
+				font-size: 20px;
+				margin-bottom: 40px;
+			}
+			span{
+				position: relative;
+				padding-bottom: 20px;
+				@include mq('sp-down'){
+					padding-bottom: 10px;
+				}
+				&::after{
+					content: "";
+					width: 50px;
+					height: 3px;
+					background-color: $red;
+					position: absolute;
+					bottom: 0;
+					left: calc(50% - 25px);
+				}
+			}
+		}
+		.wrapper{
+			padding-bottom: 90px;
+			@include mq('sp-down'){
+				padding-bottom: 50px;
+			}
+			h3{
+				padding-left: 23px;
+				position: relative;
+				letter-spacing: 0.05em;
+				font-size: 28px;
+				line-height: 40px;
+				margin-bottom: 40px;
+				@include mq('sp-down'){
+					font-size: 18px;
+					padding-left: 10px;
+					margin-bottom: 20px;
+					line-height: 24px;
+				}
+				&::before{
+					content: "";
+					width: 5px;
+					height: 18px;
+					position: absolute;
+					top: 11px;
+					left: 0;
+					background-color: #444444;
+					@include mq('sp-down'){
+						width: 3px;
+						top: 3px;
+					}
+				}
+			}
+			p{
+				font-weight: normal;
+				line-height: 2em;
+				@include mq('sp-down'){
+					font-size: 14px;
+				}
+			}
+			.flex{
+				display: flex;
+				align-items: flex-start;
+				@include mq('sp-down'){
+					flex-direction: column-reverse;
+				}
+				.left{
+					width: 280px;
+					@include mq('sp-down'){
+						width: 100%;
+						margin-top: 20px;
+					}
+					img{
+						width: 100%;
+						@include mq('sp-down'){
+							width: 80%;
+							display: block;
+							margin: auto;
+						}
+					}
+				}
+				.right{
+					width: calc(100% - 280px);
+					padding-left: 110px;
+					@include mq('sp-down'){
+						width: 100%;
+						padding-left: 0;
+					}
+				}
+			}
+			.flex2{
+				flex-direction: row-reverse;
+				@include mq('sp-down'){
+					flex-direction: column-reverse;
+				}
+				.left{
+					width: 430px;
+					@include mq('sp-down'){
+						width: 100%;
+					}
+				}
+				.right{
+					width: calc(100% - 430px);
+					padding-left: 0;
+					padding-right: 56px;
+					@include mq('sp-down'){
+						width: 100%;
+						padding-right: 0;
+					}
+					p{
+						@include mq('sp-up'){
+							letter-spacing: -0.03em;
+						}
+					}
+				}
+			}
+		}
+		.gray-wrapper{
+			h1{
+				text-align: center;
+				font-size: 36px;
+				line-height: 88px;
+				@include mq('sp-down'){
+					font-size: vw2(16);
+					line-height: 60px;
+				}
+				span{
+					color: #171717;
+					font-weight: 600;
+					background-color: #f7f7f7;
+					padding: 26px 34px;
+					@include mq('sp-down'){
+						padding: 15px 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.red-banner2{
+	.section-inner{
+		justify-content: center;
+		.card{
+			margin-left: 50px;
+			margin-right: 50px;
+			width: vw(450);
+			height: vw(242);
+			@include mq('sp-down'){
+				width: 100%;
+				height: vw2(190);
+			}
+		}
+	}
 }
