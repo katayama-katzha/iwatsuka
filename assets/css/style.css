@@ -3727,6 +3727,9 @@ footer .copyright p {
     margin-bottom: 40px;
   }
 }
+.quality-sec .section-inner .intro strong, .food-quality-sec .section-inner .intro strong, .iso22000-sec .section-inner .intro strong {
+  font-weight: bold;
+}
 .quality-sec .section-inner .t-right, .food-quality-sec .section-inner .t-right, .iso22000-sec .section-inner .t-right {
   text-align: right;
   margin-bottom: 50px;
