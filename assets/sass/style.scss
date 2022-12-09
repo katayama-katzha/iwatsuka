@@ -3474,7 +3474,7 @@ footer{
 
 // 品質と鮮度
 
-.quality-sec,.food-quality-sec,.iso22000-sec,.gas-sec{
+.quality-sec,.food-quality-sec,.iso22000-sec,.gas-sec,.attempt-sec{
 	padding-left: 30px;
 	padding-right: 30px;
 	.section-inner{
@@ -3905,6 +3905,28 @@ footer{
 	}
 }
 
+.red-banner3{
+	.section-inner{
+		.card{
+			.card-inner{
+				padding-left: vw(20);
+				padding-right: vw(20);
+				@include mq('sp-down'){
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+				h3{
+					font-size: vw(17);
+					@include mq('sp-down'){
+						font-size: vw2(14);
+					}
+				}
+			}
+
+		}
+	}
+}
+
 .iso22000-sec{
 	.section-inner{
 		.wrapper{
@@ -4040,6 +4062,64 @@ footer{
 				img{
 					width: 100%;
 					box-shadow: 6px 8px 10px 0 rgba(0, 0, 0, 0.16);
+				}
+			}
+		}
+	}
+
+}
+
+.attempt-sec{
+	ul{
+		li{
+			margin-bottom: 60px;
+			h4{
+				font-size: 28px;
+				padding-left: 23px;
+				line-height: 32px;
+				position: relative;
+				color: #444444;
+				padding-bottom: 25px;
+				&::before{
+					content: "";
+					width: 5px;
+					height: 18px;
+					background-color: #444444;
+					position: absolute;
+					left: 0;
+					top: 7px;
+				}
+				@include mq('sp-down'){
+					font-size: 18px;
+					padding-bottom: 15px;
+				}
+			}
+			p{
+				font-weight: normal;
+				color: #444444;
+				padding-bottom: 10px;
+				line-height: 1.4em;
+				@include mq('sp-down'){
+					font-size: 14px;
+				}
+			}
+			.ank-list{
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+			}
+			a{
+				font-size: 16px;
+				font-weight: normal;
+				color: #0014ff;
+				text-decoration: underline;
+				transition: all .3s;
+				line-height: 2em;
+				&:hover{
+					opacity: .7;
+				}
+				@include mq('sp-down'){
+					font-size: 12px;
 				}
 			}
 		}
