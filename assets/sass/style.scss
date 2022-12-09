@@ -4125,3 +4125,133 @@ footer{
 		}
 	}
 }
+
+.ir-news{
+	padding-top: 100px;
+	padding-bottom: 90px;
+	@include mq('sp-down'){
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.section-inner{
+		.flex{
+			.right{
+				ul{
+					li{
+						@include mq('sp-up'){
+							a{
+								time{
+									margin-right: 90px;
+								}
+								.ttl{
+									width: calc(100% - 180px);
+								}
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+}
+
+.ir-cards{
+	padding-left: 120px;
+	padding-right: 120px;
+	padding-bottom: 130px;
+	@include mq('note-down'){
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 50px;
+	}
+	.section-inner{
+		margin: auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content:flex-start;
+		@include mq('sp-down'){
+			justify-content: space-between;
+		}
+	}
+	.card{
+		width: calc(25% - 30px);
+		height: vw(90);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 5px;
+		box-shadow: 0 0 15px 0 rgba(152, 152, 152, 0.16);
+		border: solid 1px #d5d5d5;
+		background-color: #f5f5f5;
+		padding-left: 30px;
+		padding-right: 30px;
+		margin-bottom: 40px;
+		position: relative;
+		top: 0;
+		transition: all .4s;
+		margin-right: 30px;
+		@include mq('tab-down'){
+			padding-left: 15px;
+			padding-right: 15px;
+			margin-bottom: 15px;
+		}
+		@include mq('sp-down'){
+			width: calc(48%);
+			margin-right: 0;
+			height: vw2(70);
+			padding-left: vw2(10);
+			padding-right: vw2(10);
+		}
+		>span{
+			font-size: vw(16);
+			line-height: 1.5em;
+			width: calc(100% - 40px);
+			@include mq('wide'){
+				font-size: 16px;
+			}
+			@include mq('sp-down'){
+				font-size: vw2(12);
+				padding-right: vw2(10);
+				width: calc(100% - vw2(30));
+			}
+		}
+		&:nth-child(4n){
+			margin-right: 0;
+		}
+		.dot{
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			span{
+				width: 7px;
+				height: 7px;
+				background-color: $red;
+				border-radius: 50%;
+				transition: all .4s;
+			}
+			@include mq('tab-down'){
+				width: 30px;
+				height: 30px;
+
+			}
+			@include mq('sp-down'){
+				width: vw2(30);
+				height: vw2(30);
+			}
+		}
+		&:hover{
+			top: -3px;
+			box-shadow: 0px 4px 15px 0 rgba(152, 152, 152, 0.4);
+			.dot{
+				span{
+					transform: scale(1.5);
+				}
+			}
+		}
+	}
+}
