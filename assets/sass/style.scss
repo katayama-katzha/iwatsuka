@@ -3474,7 +3474,7 @@ footer{
 
 // 品質と鮮度
 
-.quality-sec,.food-quality-sec,.iso22000-sec{
+.quality-sec,.food-quality-sec,.iso22000-sec,.gas-sec{
 	padding-left: 30px;
 	padding-right: 30px;
 	.section-inner{
@@ -3976,4 +3976,72 @@ footer{
 		}
 	}
 
+}
+
+.gas-sec{
+	.section-inner{
+
+		p{
+			font-size: 18px;
+			line-height: 2em;
+			color: #444444;
+			margin-bottom: 100px;
+			font-weight: normal;
+			@include mq('sp-down'){
+				margin-bottom: 50px;
+				font-size: 14px;
+			}
+		}
+		.img-wrapper{
+			display: flex;
+			justify-content: center;
+			margin-bottom: 100px;
+			@include mq('sp-down'){
+				margin-bottom: 50px;
+			}
+			img{
+				max-width: 740px;
+				width: 100%;
+			}
+		}
+		.flex-wrapper{
+			display: flex;
+			justify-content: space-between;
+			@include mq('sp-down'){
+				flex-direction: column;
+			}
+			.card{
+				width: calc(50% - 50px);
+				@include mq('sp-down'){
+					width: 100%;
+					margin-bottom: 20px;
+				}
+				h4{
+					position: relative;
+					font-size: 22px;
+					color: #444444;
+					letter-spacing: 0.05em;
+					padding-left: 15px;
+					padding-bottom: 10px;
+					line-height: 32px;
+					@include mq('sp-down'){
+						font-size: 18px;
+					}
+					&::before{
+						content: "";
+						width: 5px;
+						height: 18px;
+						background-color: #444444;
+						position: absolute;
+						left: 0;
+						top: 7px;
+					}
+				}
+				img{
+					width: 100%;
+					box-shadow: 6px 8px 10px 0 rgba(0, 0, 0, 0.16);
+				}
+			}
+		}
+	}
 }
