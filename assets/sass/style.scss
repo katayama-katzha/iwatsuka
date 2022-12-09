@@ -4255,3 +4255,240 @@ footer{
 		}
 	}
 }
+
+.ir-main{
+	overflow: visible;
+	.ir-flex{
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-top: 90px;
+		padding-bottom: 105px;
+		@include mq('sp-down'){
+			padding-top: 50px;
+			padding-bottom: 40px;
+			
+		}
+		.section-inner{
+			max-width: 1200px;
+			margin: auto;
+			display: flex;
+			@include mq('sp-down'){
+				flex-direction: column;
+			}
+		}
+		.left{
+			width: calc(100% - 290px);
+			padding-right: 90px;
+			@include mq('sp-down'){
+				width: 100%;
+				padding-right: 0;
+				padding-bottom: 40px;
+			}
+			h3{
+				font-size: 28px;
+				letter-spacing: 0.05em;
+				padding-left: 23px;
+				line-height: 40px;
+				position: relative;
+				@include mq('sp-down'){
+					font-size: 24px;
+					padding-left: 10px;
+				}
+				&::before{
+					content: "";
+					width: 3px;
+					height: 18px;
+					position: absolute;
+					background-color: $red;
+					left: 0;
+					top: 11px;
+					@include mq('sp-down'){
+						top: 12px;
+					}
+				}
+				&.back-h3{
+					padding-left: 0;
+					&::before{
+						display: none;
+					}
+				}
+			}
+			
+			.month-wrapper{
+				h5{
+					margin-top: 25px;
+					font-size: 20px;
+					line-height: 26px;
+					color: #444444;
+					font-weight: bold;
+					letter-spacing: 0.05em;
+
+				}
+				ul{
+					li{
+						a{
+							display: flex;
+							padding-top: 14.5px;
+							padding-bottom: 14.5px;
+							border-bottom: 1px solid #e8e8e8;
+							transition: all .3s;
+							@include mq('sp-up'){
+								&:hover{
+									background-color: rgba(0,0,0,.05);
+								}
+							}
+
+							time{
+								width: 90px;
+								font-size: 18px;
+								letter-spacing: 0.05em;
+								margin-right: 70px;
+								white-space: nowrap;
+							}
+							p{
+								font-size: 16px;
+								max-width: calc(100% - 160px);
+								color: #0014ff;
+								line-height: 1.4em;
+								font-weight: normal;
+							}
+							@include mq('sp-down'){
+								flex-direction: column;
+								time,p{
+									width: 100%;
+									max-width: unset;
+								}
+								time{
+									margin-right: unset;
+									font-size: 16px;
+								}
+								p{
+									padding-top: 10px;
+									font-size: 14px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.backnumber{
+				margin-top: 90px;
+				@include mq('sp-down'){
+					margin-top: 50px;
+				}
+				.back-h3{
+					padding-bottom: 40px;
+					@include mq('sp-down'){
+						padding-bottom: 25px;
+					}
+				}
+				.year-wrapper{
+					margin-bottom: 25px;
+				}
+				.back-ttl{
+					position: relative;
+					cursor: pointer;
+					&::before,&::after{
+						content: "";
+						width: 18px;
+						height: 2px;
+						background-color: $red;
+						position: absolute;
+						right: 0;
+						top: 20px;
+					}
+					&::after{
+						transition: all .4s;
+						transform: rotate(90deg);
+					}
+					&.active{
+						&::after{
+							transform: rotate(0);
+						}
+					}
+				}
+				.month-wrapper{
+					display: none;
+				}
+			}
+
+		}
+	}
+	.sticky-wrapper{
+		padding-top: 90px;
+		@include mq('sp-down'){
+			padding-top: 0;
+		}
+		.sticky{
+			width: 290px;
+			padding: 30px 28px;
+			padding-top: 10px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.06);
+			position: sticky;
+			top: 60px;
+
+			@include mq('sp-down'){
+				position: static;
+				width: 100%;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-bottom: 20px;
+			}
+			ul{
+				@include mq('sp-down'){
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+				}
+				li{
+					border-bottom: 1px solid #e8e8e8;
+					@include mq('sp-down'){
+						width: 48%;
+						
+					}
+					a{
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						padding-bottom: 20px;
+						padding-top: 20px;
+						font-weight: normal;
+						font-size: 15px;
+						transition: all .3s;
+						img{
+							margin-left: 0px;
+						}
+						position: relative;
+						&::before{
+							content: "";
+							width: 13px;
+							height: 1px;
+							background-color: $red;
+							position: absolute;
+							left: 0;
+							bottom: -1px;
+							transition: all .3s;
+						}
+						&:hover{
+							background-color: rgba(0,0,0,0.03);
+							&::before{
+								width: 30px;
+								height: 1.5px;
+							}
+						}
+						@include mq('sp-down'){
+							font-size: 12px;
+							line-height: 1.2em;
+							img{
+								transform: rotate(90deg);
+								margin-left: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
