@@ -57,12 +57,14 @@ jQuery(function($){
       $(this).toggleClass('active');
       $('.menu').toggleClass('active');
       $('body').toggleClass('active');
+      $('.totop').toggleClass('active');
       e.preventDefault();
     });
     $( '.menu a' ).on( 'click', function(e){
       $('.burger').removeClass('active');
       $('.menu').removeClass('active');
       $('body').removeClass('active');
+      $('.totop').removeClass('active');
       e.preventDefault();
     });
     $( '.has-child' ).on( 'click', function(e){
